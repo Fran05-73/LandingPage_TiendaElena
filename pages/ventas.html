@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - Tienda Elena</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background: #dbeafe; }
+        .app-layout { display: flex; min-height: 100vh; }
+        .app-sidebar { width: 240px; background: #0f172a; color: white; padding: 20px 0; position: fixed; height: 100vh; overflow-y: auto; }
+        .app-sidebar-brand { display: flex; align-items: center; gap: 10px; padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 16px; font-weight: 700; font-size: 1.05rem; }
+        .app-sidebar-menu li { display: flex; align-items: center; gap: 10px; padding: 12px 20px; color: #94a3b8; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; border-left: 3px solid transparent; }
+        .app-sidebar-menu li:hover { color: white; background: rgba(255,255,255,0.05); }
+        .app-sidebar-menu li.active { color: white; background: #2563eb; border-left-color: #60a5fa; }
+        .app-sidebar-section { padding: 16px 20px 8px; font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 700; }
+        .app-main { margin-left: 240px; flex: 1; }
+        .app-topbar { background: white; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
+        .app-topbar h2 { font-size: 1.3rem; font-weight: 700; color: #0f172a; }
+        .app-user-badge { display: flex; align-items: center; gap: 8px; padding: 6px 14px; background: #fef3c7; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: #d97706; }
+        .app-content { padding: 32px; }
+        .pos-grid { display: grid; grid-template-columns: 1fr 380px; gap: 24px; }
+        .pos-panel { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .pos-panel h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #0f172a; }
+        .pos-search { width: 100%; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 16px; }
+        .pos-search:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .pos-products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .pos-product-item { padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .pos-product-item:hover { border-color: #2563eb; background: #eff6ff; }
+        .pos-product-item .name { font-size: 0.85rem; font-weight: 600; color: #1e293b; margin-bottom: 4px; }
+        .pos-product-item .price { font-size: 0.95rem; font-weight: 700; color: #2563eb; }
+        .cart-items { min-height: 250px; margin-bottom: 16px; }
+        .cart-empty { text-align: center; color: #94a3b8; padding: 50px 0; }
+        .cart-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+        .cart-row .cname { font-weight: 600; font-size: 0.9rem; }
+        .cart-row .cqty { color: #64748b; font-size: 0.85rem; }
+        .cart-row .cprice { font-weight: 700; color: #2563eb; }
+        .cart-row .cremove { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem; }
+        .cart-total-section { border-top: 2px solid #e2e8f0; padding-top: 16px; }
+        .cart-total-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.95rem; color: #475569; }
+        .cart-total-final { font-size: 1.3rem; font-weight: 800; color: #0f172a; padding-top: 8px; }
+        .btn-complete { width: 100%; padding: 14px; background: #10b981; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 16px; }
+        .btn-complete:hover { background: #059669; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: #2563eb; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; cursor: pointer; }
+        @media (max-width: 768px) { .app-sidebar { display: none; } .app-main { margin-left: 0; } .pos-grid { grid-template-columns: 1fr; } .app-content { padding: 16px; } }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="app-sidebar">
+            <div class="app-sidebar-brand">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563eb"/><path d="M8 12h16M8 16h12M8 20h14" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                Tienda Elena
+            </div>
+            <ul class="app-sidebar-menu">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Dashboard</li>
+                <li class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg> Punto de Venta</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Clientes</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg> Productos</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Ventas</li>
+            </ul>
+        </aside>
+        <main class="app-main">
+            <div class="app-topbar">
+                <h2>Punto de Venta</h2>
+                <div class="app-user-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    cajero01 
+                </div>
+            </div>
+            <div class="app-content">
+                <a href="../index.html" class="back-link">← Volver al inicio</a>
+                <div class="pos-grid">
+                    <div class="pos-panel">
+                        <h3>📦 Productos Disponibles</h3>
+                        <input type="text" class="pos-search" placeholder="🔍 Escanear código o buscar producto..." id="posSearch">
+                        <div class="pos-products-grid" id="posProducts">
+                            <div class="pos-product-item" onclick="addToCart('Cafetera Delonghi', 450)"><div class="name">Cafetera Delonghi</div><div class="price">Bs. 450.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Drone para niños', 280)"><div class="name">Drone para niños</div><div class="price">Bs. 280.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Muñeca Barbie fashionista', 95)"><div class="name">Muñeca Barbie fashionista</div><div class="price">Bs. 95.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Lentes de sol polarizados', 65)"><div class="name">Lentes de sol polarizados</div><div class="price">Bs. 65.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Leche entera 1L', 8.50)"><div class="name">Leche entera 1L</div><div class="price">Bs. 8.50</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Jabón en polvo 1kg', 15)"><div class="name">Jabón en polvo 1kg</div><div class="price">Bs. 15.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Yogurt natural 500ml', 6)"><div class="name">Yogurt natural 500ml</div><div class="price">Bs. 6.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Atún en lata 150g', 12)"><div class="name">Atún en lata 150g</div><div class="price">Bs. 12.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Arroz grano de oro 1kg', 10)"><div class="name">Arroz grano de oro 1kg</div><div class="price">Bs. 10.00</div></div>
+                            <div class="pos-product-item" onclick="addToCart('Bolso de mano mujer', 120)"><div class="name">Bolso de mano mujer</div><div class="price">Bs. 120.00</div></div>
+                        </div>
+                    </div>
+                    <div class="pos-panel">
+                        <h3>🛒 Carrito de Venta</h3>
+                        <div class="cart-items" id="cartItems">
+                            <div class="cart-empty">Agrega productos al carrito</div>
+                        </div>
+                        <div class="cart-total-section">
+                            <div class="cart-total-row"><span>Subtotal:</span><span id="cartSubtotal">Bs. 0.00</span></div>
+                            <div class="cart-total-row"><span>IVA (0%):</span><span>Bs. 0.00</span></div>
+                            <div class="cart-total-row cart-total-final"><span>TOTAL:</span><span id="cartTotal">Bs. 0.00</span></div>
+                        </div>
+                        <button class="btn-complete" onclick="completeSale()">💰 Completar Venta</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        let cart = [];
+        function addToCart(name, price) {
+            const existing = cart.find(i => i.name === name);
+            if (existing) { existing.qty++; } else { cart.push({ name, price, qty: 1 }); }
+            renderCart();
+        }
+        function removeFromCart(index) { cart.splice(index, 1); renderCart(); }
+        function renderCart() {
+            const container = document.getElementById('cartItems');
+            if (cart.length === 0) { container.innerHTML = '<div class="cart-empty">Agrega productos al carrito</div>'; document.getElementById('cartSubtotal').textContent = 'Bs. 0.00'; document.getElementById('cartTotal').textContent = 'Bs. 0.00'; return; }
+            let html = '', total = 0;
+            cart.forEach((item, i) => {
+                const t = item.price * item.qty; total += t;
+                html += `<div class="cart-row"><div><span class="cname">${item.name}</span> <span class="cqty">x${item.qty}</span></div><div><span class="cprice">Bs. ${t.toFixed(2)}</span> <button class="cremove" onclick="removeFromCart(${i})">✕</button></div></div>`;
+            });
+            container.innerHTML = html;
+            document.getElementById('cartSubtotal').textContent = `Bs. ${total.toFixed(2)}`;
+            document.getElementById('cartTotal').textContent = `Bs. ${total.toFixed(2)}`;
+        }
+        function completeSale() {
+            if (cart.length === 0) { alert('⚠️ El carrito está vacío.'); return; }
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            alert(`✅ Venta #${2019 + Math.floor(Math.random()*100)} completada!\nTotal: Bs. ${total.toFixed(2)}\nProductos: ${cart.length}`);
+            cart = []; renderCart();
+        }
+        document.getElementById('posSearch').addEventListener('input', function() {
+            const f = this.value.toLowerCase();
+            document.querySelectorAll('.pos-product-item').forEach(el => { el.style.display = el.textContent.toLowerCase().includes(f) ? '' : 'none'; });
+        });
+    </script>
+</body>
+</html>

@@ -1,106 +1,747 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sistema de gestión administrativa a medida para Tienda Doña Elena. POS, inventario inteligente y predicción de demanda con IA.">
-  <title>Tienda Doña Elena | Sistema de Gestión</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimarket Elena - Sistema de Gestión Inteligente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 </head>
 <body>
-
-  <section class="hero">
-    <div class="container hero-content fade-up">
-      <h1>Tecnología de precisión<br><span>para el minimarket de siempre.</span></h1>
-      <p>Un sistema a medida que profesionaliza cada operación, desde el punto de venta hasta la predicción inteligente de stock.</p>
-      <a href="#sistema" class="btn">Acceder al Panel Interno</a>
-      <div class="hero-mockup">
-        <img src="img/Dashboard.png" alt="Vista del Dashboard POS - Tienda Doña Elena" class="hero-img" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="acerca">
-    <div class="container about-content fade-up">
-      <div>
-        <h2>No es un software genérico.</h2>
-        <p style="margin: 0 0 20px 0;">“Tienda Doña Elena” es un ecosistema digital diseñado exclusivamente para las necesidades reales de nuestro minimarket. Cada módulo, cada proceso y cada dato están pensados para que la gestión diaria sea más ágil, segura y centrada en el cliente.</p>
-        <p style="margin: 0;">Porque la tecnología más valiosa es la que se adapta a tu negocio, no al revés.</p>
-      </div>
-      <div class="about-visual">
-        <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
-        <p style="font-weight: 600; color: var(--primary);">Hecho a la medida de tu operación</p>
-        <p style="font-size: 0.9rem;">Flujos optimizados para venta rápida, control de rotación y reposición predictiva.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="features" id="funcionalidades">
-    <div class="container">
-      <h2 class="fade-up">Funcionalidades Clave</h2>
-      <div class="features-grid">
-        <div class="feature-card fade-up">
-          <div class="icon">🛒</div>
-          <h3>Punto de Venta Ágil</h3>
-          <p>Registro rápido, facturación integrada y control en tiempo real de cada transacción. Interfaz pensada para la velocidad que exige el mostrador.</p>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="#2563eb"/>
+                        <path d="M8 12h16M8 16h12M8 20h14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="24" cy="22" r="3" fill="#fbbf24"/>
+                    </svg>
+                </div>
+                <span class="nav-title">Tienda Elena</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#modulos" class="nav-link">Módulos</a></li>
+                <li><a href="#funcionalidades" class="nav-link">Funcionalidades</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="pages/dashboard.html" class="btn btn-primary btn-sm">Ver Sistema</a>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="feature-card fade-up">
-          <div class="icon">📦</div>
-          <h3>Inventario Inteligente</h3>
-          <p>Seguimiento preciso de entradas, salidas y rotación. Alertas automáticas antes de que falte un producto o se supere el stock óptimo.</p>
-        </div>
-        <div class="feature-card fade-up">
-          <div class="icon">🤖</div>
-          <h3>Predicción de Demanda con IA</h3>
-          <p>Algoritmos de Machine Learning que anticipan qué productos se venderán más, optimizando compras y evitando mermas por sobreabastecimiento.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section class="impact" id="impacto">
-    <div class="container">
-      <h2 class="fade-up">Resultados que se sienten en cada turno</h2>
-      <p style="text-align: center;" class="fade-up">Operación fluida para el equipo, decisiones basadas en datos reales y una experiencia de compra más confiable para el vecino.</p>
-      <div class="impact-stats">
-        <div class="stat-box fade-up">
-          <div class="stat-number">+35%</div>
-          <p style="margin:0;">Disponibilidad en estantes</p>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Sistema de Gestión v2.0
+                </div>
+                <h1 class="hero-title">
+                    Gestión Inteligente para tu
+                    <span class="hero-highlight">Minimarket</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Moderniza tu negocio con nuestro sistema integral de inventario, ventas y contabilidad. 
+                    Controla stock, predice demanda con IA y toma decisiones basadas en datos en tiempo real.
+                </p>
+                <div class="hero-buttons">
+                    <a href="pages/dashboard.html" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+                        </svg>
+                        Explorar Dashboard
+                    </a>
+                    <a href="#modulos" class="btn btn-outline btn-lg">
+                        Ver Módulos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">142</span>
+                        <span class="stat-label">Productos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Monitoreo</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">IA</span>
+                        <span class="stat-label">Predicción</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="preview-title">Dashboard - Tienda Elena</span>
+                    </div>
+                    <div class="preview-body">
+                        <div class="preview-cards">
+                            <div class="preview-card card-blue">
+                                <span class="pc-label">Total Productos</span>
+                                <span class="pc-value">142</span>
+                            </div>
+                            <div class="preview-card card-orange">
+                                <span class="pc-label">Bajo Stock</span>
+                                <span class="pc-value">1</span>
+                            </div>
+                            <div class="preview-card card-red">
+                                <span class="pc-label">Vencidos</span>
+                                <span class="pc-value">1</span>
+                            </div>
+                            <div class="preview-card card-green">
+                                <span class="pc-label">Ventas Hoy</span>
+                                <span class="pc-value">Bs. 2,400</span>
+                            </div>
+                        </div>
+                        <div class="preview-chart">
+                            <div class="chart-bars">
+                                <div class="bar" style="height:60%"></div>
+                                <div class="bar" style="height:80%"></div>
+                                <div class="bar" style="height:45%"></div>
+                                <div class="bar" style="height:90%"></div>
+                                <div class="bar" style="height:70%"></div>
+                                <div class="bar" style="height:55%"></div>
+                                <div class="bar" style="height:85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="stat-box fade-up">
-          <div class="stat-number">-40%</div>
-          <p style="margin:0;">Mermas por vencimiento</p>
+    </section>
+
+    <!-- Módulos Section -->
+    <section class="section" id="modulos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Módulos del Sistema</span>
+                <h2 class="section-title">Todo lo que necesitas en un solo lugar</h2>
+                <p class="section-subtitle">Sistema integral diseñado para optimizar cada aspecto de tu minimarket</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card" data-module="dashboard">
+                    <div class="module-icon icon-blue">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Dashboard</h3>
+                    <p class="module-desc">Panel de control con métricas en tiempo real, alertas de stock y predicción de demanda con IA.</p>
+                    <a href="pages/dashboard.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="productos">
+                    <div class="module-icon icon-green">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Productos</h3>
+                    <p class="module-desc">Registro completo con nombre, código, categoría, precio, stock y fecha de caducidad. Búsqueda rápida por código o nombre.</p>
+                    <a href="pages/productos.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="inventario">
+                    <div class="module-icon icon-orange">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Inventario</h3>
+                    <p class="module-desc">Gestión de entradas y salidas con actualización automática de stock. Historial completo de movimientos.</p>
+                    <a href="pages/inventario.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="ventas">
+                    <div class="module-icon icon-purple">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Punto de Venta</h3>
+                    <p class="module-desc">Registro de ventas asociadas al inventario. Generación de facturas y control de caja en tiempo real.</p>
+                    <a href="pages/ventas.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="reportes">
+                    <div class="module-icon icon-cyan">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Reportes</h3>
+                    <p class="module-desc">Reportes de inventario, productos próximos a vencer, ventas por período y gráficos de tendencias.</p>
+                    <a href="pages/reportes.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="usuarios">
+                    <div class="module-icon icon-indigo">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Usuarios y Roles</h3>
+                    <p class="module-desc">Gestión de usuarios con roles: administrador, cajero y supervisor. Control de acceso seguro.</p>
+                    <a href="pages/usuarios.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="contabilidad">
+                    <div class="module-icon icon-teal">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Contabilidad</h3>
+                    <p class="module-desc">Módulo de contabilidad básica con registro de ingresos, egresos y balance general automatizado.</p>
+                    <a href="pages/contabilidad.html" class="module-link">Explorar →</a>
+                </div>
+                <div class="module-card" data-module="alertas">
+                    <div class="module-icon icon-red">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                    </div>
+                    <h3 class="module-title">Alertas Inteligentes</h3>
+                    <p class="module-desc">Notificaciones de stock bajo y productos próximos a vencer. Predicción de demanda con inteligencia artificial.</p>
+                    <a href="pages/dashboard.html" class="module-link">Explorar →</a>
+                </div>
+            </div>
         </div>
-        <div class="stat-box fade-up">
-          <div class="stat-number">&lt; 3s</div>
-          <p style="margin:0;">Tiempo promedio por venta</p>
+    </section>
+
+    <!-- Funcionalidades / RF Section -->
+    <section class="section section-alt" id="funcionalidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Requerimientos Funcionales</span>
+                <h2 class="section-title">11 Funcionalidades Clave</h2>
+                <p class="section-subtitle">Cada módulo diseñado para resolver necesidades reales de tu negocio</p>
+            </div>
+            <div class="rf-grid">
+                <div class="rf-card">
+                    <div class="rf-number">RF-01</div>
+                    <h4>Registro de Productos</h4>
+                    <p>Nombre, código, categoría, precio, stock y fecha de caducidad.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-02</div>
+                    <h4>Gestión de Stock</h4>
+                    <p>Entradas y salidas con actualización automática en tiempo real.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-03</div>
+                    <h4>Alertas de Vencimiento</h4>
+                    <p>Notificaciones cuando un producto esté próximo a caducar.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-04</div>
+                    <h4>Stock Mínimo</h4>
+                    <p>Alertas cuando el inventario esté por debajo del nivel configurado.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-05</div>
+                    <h4>Registro de Ventas</h4>
+                    <p>Ventas asociadas automáticamente al inventario.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-06</div>
+                    <h4>Reportes de Inventario</h4>
+                    <p>Stock actual, próximos a vencer y ventas por período.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-07</div>
+                    <h4>Gestión de Usuarios</h4>
+                    <p>Roles: administrador, cajero y supervisor con control de acceso.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-08</div>
+                    <h4>Contabilidad Básica</h4>
+                    <p>Ingresos, egresos y balance general integrado.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-09</div>
+                    <h4>Búsqueda Rápida</h4>
+                    <p>Consultas por código, nombre o categoría al instante.</p>
+                </div>
+                <div class="rf-card">
+                    <div class="rf-number">RF-10</div>
+                    <h4>Historial de Movimientos</h4>
+                    <p>Trazabilidad completa: entradas, salidas, pérdidas y devoluciones.</p>
+                </div>
+                <div class="rf-card rf-card-featured">
+                    <div class="rf-number">RF-11</div>
+                    <h4>Gráficos y Tendencias</h4>
+                    <p>Visualizaciones de ventas y consumo para decisiones estratégicas.</p>
+                    <span class="rf-badge">IA Integrada</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="tech" id="sistema">
-    <div class="container">
-      <h2 class="fade-up">Cimentado en tecnología robusta</h2>
-      <p style="text-align: center;" class="fade-up">Construido con PHP/Laravel y PostgreSQL, el sistema garantiza velocidad de respuesta, escalabilidad progresiva y cifrado de nivel empresarial. Diseñado para funcionar 24/7 sin interrupciones.</p>
-      <div class="tech-badges fade-up">
-        <span class="badge">Laravel 10+</span>
-        <span class="badge">PostgreSQL</span>
-        <span class="badge">REST API</span>
-        <span class="badge">ML / Scikit-learn</span>
-        <span class="badge">Docker Ready</span>
-      </div>
-    </div>
-  </section>
+    <!-- Demo Interactiva -->
+    <section class="section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Vista Previa</span>
+                <h2 class="section-title">Así se ve el sistema</h2>
+                <p class="section-subtitle">Interfaz limpia, moderna y fácil de usar</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-sidebar">
+                    <div class="demo-sidebar-brand">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#2563eb"/>
+                            <path d="M8 12h16M8 16h12M8 20h14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Tienda Elena</span>
+                    </div>
+                    <ul class="demo-sidebar-menu">
+                        <li class="active" data-tab="tab-dashboard">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                            Dashboard
+                        </li>
+                        <li data-tab="tab-productos">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                            Productos
+                        </li>
+                        <li data-tab="tab-ventas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                            Ventas
+                        </li>
+                        <li data-tab="tab-inventario">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                            Inventario
+                        </li>
+                        <li data-tab="tab-reportes">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                            Reportes
+                        </li>
+                    </ul>
+                </div>
+                <div class="demo-content">
+                    <!-- Tab Dashboard -->
+                    <div class="demo-tab active" id="tab-dashboard">
+                        <div class="demo-topbar">
+                            <h3>Dashboard</h3>
+                            <div class="demo-user">
+                                <span class="demo-user-avatar">A</span>
+                                <span>admin</span>
+                            </div>
+                        </div>
+                        <div class="demo-cards-row">
+                            <div class="demo-stat-card border-blue">
+                                <span class="dsc-label">Total Productos</span>
+                                <span class="dsc-value">142</span>
+                            </div>
+                            <div class="demo-stat-card border-orange">
+                                <span class="dsc-label">Bajo Stock (&lt;10)</span>
+                                <span class="dsc-value">1</span>
+                            </div>
+                            <div class="demo-stat-card border-red">
+                                <span class="dsc-label">Productos Vencidos</span>
+                                <span class="dsc-value">1</span>
+                            </div>
+                            <div class="demo-stat-card border-green">
+                                <span class="dsc-label">Ventas Hoy</span>
+                                <span class="dsc-value">Bs. 2,400.00</span>
+                            </div>
+                        </div>
+                        <div class="demo-table-section">
+                            <div class="demo-table-header">
+                                <h4>🕐 Últimas Ventas</h4>
+                                <div class="demo-table-actions">
+                                    <button class="btn btn-primary btn-xs">+ Nueva Venta</button>
+                                    <button class="btn btn-outline btn-xs">Productos</button>
+                                    <button class="btn btn-outline btn-xs">Clientes</button>
+                                </div>
+                            </div>
+                            <table class="demo-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Cliente</th>
+                                        <th>Fecha</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2018</td><td>pruebas prueba</td><td>31/05/2026</td><td>Bs. 2,100.00</td></tr>
+                                    <tr><td>2015</td><td>pruebas prueba</td><td>31/05/2026</td><td>Bs. 200.00</td></tr>
+                                    <tr><td>2014</td><td>pruebas prueba</td><td>31/05/2026</td><td>Bs. 100.00</td></tr>
+                                    <tr><td>2017</td><td>Isabel Flores Choque</td><td>30/05/2026</td><td>Bs. 300.00</td></tr>
+                                    <tr><td>2016</td><td>pruebas prueba</td><td>30/05/2026</td><td>Bs. 100.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-table-section">
+                            <div class="demo-table-header">
+                                <h4>⚠ Productos con Bajo Stock</h4>
+                            </div>
+                            <table class="demo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>SKU</th>
+                                        <th>Stock Actual</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bolso de mano mujer</td>
+                                        <td><span class="sku-badge">PROD-0150</span></td>
+                                        <td class="text-danger"><strong>5</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Tienda Doña Elena. Sistema interno de gestión administrativa.</p>
-      <p style="margin-top: 8px; font-size: 0.85rem;">Desarrollado con enfoque en eficiencia, seguridad y experiencia local.</p>
-    </div>
-  </footer>
+                    <!-- Tab Productos -->
+                    <div class="demo-tab" id="tab-productos">
+                        <div class="demo-topbar">
+                            <h3>Productos</h3>
+                            <div class="demo-user">
+                                <span class="demo-user-avatar">A</span>
+                                <span>admin</span>
+                            </div>
+                        </div>
+                        <div class="demo-toolbar">
+                            <input type="text" placeholder=" Buscar por código, nombre o categoría..." class="demo-search">
+                            <button class="btn btn-primary btn-sm">+ Nuevo Producto</button>
+                        </div>
+                        <table class="demo-table">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Vencimiento</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PROD-0001</td><td>Cafetera Delonghi</td><td>Electrodomésticos</td><td>Bs. 450.00</td><td>114</td><td>—</td><td><span class="status-badge status-ok">Disponible</span></td></tr>
+                                <tr><td>PROD-0002</td><td>Drone para niños</td><td>Juguetes</td><td>Bs. 280.00</td><td>155</td><td>—</td><td><span class="status-badge status-ok">Disponible</span></td></tr>
+                                <tr><td>PROD-0150</td><td>Bolso de mano mujer</td><td>Accesorios</td><td>Bs. 120.00</td><td>5</td><td>—</td><td><span class="status-badge status-low">Stock Bajo</span></td></tr>
+                                <tr><td>PROD-0089</td><td>Leche entera 1L</td><td>Lácteos</td><td>Bs. 8.50</td><td>45</td><td>15/06/2026</td><td><span class="status-badge status-warning">Por Vencer</span></td></tr>
+                                <tr><td>PROD-0201</td><td>Yogurt natural 500ml</td><td>Lácteos</td><td>Bs. 6.00</td><td>12</td><td>05/06/2026</td><td><span class="status-badge status-warning">Por Vencer</span></td></tr>
+                                <tr><td>PROD-0045</td><td>Jabón en polvo 1kg</td><td>Limpieza</td><td>Bs. 15.00</td><td>80</td><td>—</td><td><span class="status-badge status-ok">Disponible</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-  <script src="js/main.js" defer></script>
+                    <!-- Tab Ventas -->
+                    <div class="demo-tab" id="tab-ventas">
+                        <div class="demo-topbar">
+                            <h3>Punto de Venta</h3>
+                            <div class="demo-user">
+                                <span class="demo-user-avatar">C</span>
+                                <span>cajero01</span>
+                            </div>
+                        </div>
+                        <div class="pos-layout">
+                            <div class="pos-products">
+                                <h4>Productos</h4>
+                                <input type="text" placeholder="Escanear código o buscar..." class="demo-search">
+                                <div class="pos-product-list">
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Cafetera Delonghi</span>
+                                        <span class="pos-item-price">Bs. 450.00</span>
+                                    </div>
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Drone para niños</span>
+                                        <span class="pos-item-price">Bs. 280.00</span>
+                                    </div>
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Muñeca Barbie fashionista</span>
+                                        <span class="pos-item-price">Bs. 95.00</span>
+                                    </div>
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Lentes de sol polarizados</span>
+                                        <span class="pos-item-price">Bs. 65.00</span>
+                                    </div>
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Leche entera 1L</span>
+                                        <span class="pos-item-price">Bs. 8.50</span>
+                                    </div>
+                                    <div class="pos-item" onclick="addToCart(this)">
+                                        <span class="pos-item-name">Jabón en polvo 1kg</span>
+                                        <span class="pos-item-price">Bs. 15.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pos-cart">
+                                <h4> Carrito de Venta</h4>
+                                <div class="pos-cart-items" id="cartItems">
+                                    <p class="pos-empty">Agrega productos al carrito</p>
+                                </div>
+                                <div class="pos-cart-total">
+                                    <div class="pos-total-row">
+                                        <span>Subtotal:</span>
+                                        <span id="cartSubtotal">Bs. 0.00</span>
+                                    </div>
+                                    <div class="pos-total-row pos-total-final">
+                                        <span>TOTAL:</span>
+                                        <span id="cartTotal">Bs. 0.00</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-block" onclick="completeSale()">💰 Completar Venta</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Inventario -->
+                    <div class="demo-tab" id="tab-inventario">
+                        <div class="demo-topbar">
+                            <h3>Gestión de Inventario</h3>
+                            <div class="demo-user">
+                                <span class="demo-user-avatar">A</span>
+                                <span>admin</span>
+                            </div>
+                        </div>
+                        <div class="demo-toolbar">
+                            <button class="btn btn-primary btn-sm"> Entrada de Mercancía</button>
+                            <button class="btn btn-outline btn-sm">📤 Salida de Mercancía</button>
+                            <button class="btn btn-outline btn-sm">📋 Historial</button>
+                        </div>
+                        <table class="demo-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tipo</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Fecha</th>
+                                    <th>Usuario</th>
+                                    <th>Motivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>MV-001</td><td><span class="type-badge type-in"> Entrada</span></td><td>Cafetera Delonghi</td><td>+20</td><td>31/05/2026</td><td>admin</td><td>Compra proveedor</td></tr>
+                                <tr><td>MV-002</td><td><span class="type-badge type-out"> Salida</span></td><td>Drone para niños</td><td>-5</td><td>31/05/2026</td><td>cajero01</td><td>Venta #2018</td></tr>
+                                <tr><td>MV-003</td><td><span class="type-badge type-out">📤 Salida</span></td><td>Leche entera 1L</td><td>-10</td><td>30/05/2026</td><td>cajero01</td><td>Venta #2017</td></tr>
+                                <tr><td>MV-004</td><td><span class="type-badge type-loss"> Pérdida</span></td><td>Yogurt natural 500ml</td><td>-3</td><td>29/05/2026</td><td>admin</td><td>Vencido</td></tr>
+                                <tr><td>MV-005</td><td><span class="type-badge type-return">↩ Devolución</span></td><td>Jabón en polvo 1kg</td><td>+2</td><td>28/05/2026</td><td>supervisor</td><td>Devolución cliente</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Tab Reportes -->
+                    <div class="demo-tab" id="tab-reportes">
+                        <div class="demo-topbar">
+                            <h3>Reportes y Analíticas</h3>
+                            <div class="demo-user">
+                                <span class="demo-user-avatar">S</span>
+                                <span>supervisor</span>
+                            </div>
+                        </div>
+                        <div class="reports-grid">
+                            <div class="report-card">
+                                <h4>📊 Ventas por Período</h4>
+                                <div class="mini-chart">
+                                    <div class="mini-bar" style="height:40%"></div>
+                                    <div class="mini-bar" style="height:65%"></div>
+                                    <div class="mini-bar" style="height:50%"></div>
+                                    <div class="mini-bar" style="height:80%"></div>
+                                    <div class="mini-bar" style="height:70%"></div>
+                                    <div class="mini-bar" style="height:90%"></div>
+                                    <div class="mini-bar" style="height:75%"></div>
+                                </div>
+                                <p class="report-summary">Total: <strong>Bs. 18,450.00</strong> esta semana</p>
+                            </div>
+                            <div class="report-card">
+                                <h4>📦 Productos en Stock</h4>
+                                <div class="report-stat-big">142</div>
+                                <p class="report-summary">138 disponibles · 4 bajo stock</p>
+                            </div>
+                            <div class="report-card">
+                                <h4> Próximos a Vencer</h4>
+                                <div class="report-stat-big text-warning">7</div>
+                                <p class="report-summary">Productos con vencimiento en &lt; 30 días</p>
+                            </div>
+                            <div class="report-card">
+                                <h4>🤖 Predicción IA - Semana 23</h4>
+                                <table class="mini-table">
+                                    <tr><td>Cafetera Delonghi</td><td>Demanda: 4.00</td><td><span class="status-badge status-ok">Stock Seguro</span></td></tr>
+                                    <tr><td>Drone para niños</td><td>Demanda: 3.75</td><td><span class="status-badge status-ok">Stock Seguro</span></td></tr>
+                                    <tr><td>Muñeca Barbie</td><td>Demanda: 3.75</td><td><span class="status-badge status-ok">Stock Seguro</span></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="section section-dark" id="sobre-nosotros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag section-tag-light">Sobre Nosotros</span>
+                <h2 class="section-title text-white">Conoce nuestra historia</h2>
+            </div>
+            <div class="about-grid">
+                <!-- Info Empresa -->
+                <div class="about-card about-company">
+                    <div class="about-card-header">
+                        <div class="about-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 012-2h4a2 2 0 012 2v9"/>
+                            </svg>
+                        </div>
+                        <h3>Minimarket "El Progreso"</h3>
+                        <span class="about-location">📍 El Alto, Bolivia</span>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h4> Antecedentes Institucionales</h4>
+                        <h5>Reseña Histórica</h5>
+                        <p>El Minimarket "El Progreso" es un emprendimiento de carácter familiar y privado que opera en la ciudad de El Alto, Bolivia. Surgió inicialmente como una pequeña tienda de abarrotes destinada a satisfacer las necesidades básicas de la zona. Con el paso de los años y debido al crecimiento demográfico y comercial de la región, el negocio expandió su variedad de productos, incluyendo artículos de limpieza, lácteos, embutidos y ferretería ligera, consolidándose bajo la modalidad de minimarket.</p>
+                        <p>A pesar de su crecimiento en volumen de ventas y variedad de stock, la institución ha mantenido procesos de administración tradicionales, gestionando su inventario mediante registros manuales en cuadernos y hojas de cálculo básicas, lo que motiva la presente propuesta de modernización tecnológica.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h4>🎯 Misión</h4>
+                        <p>Somos un comercio minorista comprometido con el bienestar de las familias alteñas, brindando una amplia variedad de productos de primera necesidad con calidad y precios competitivos. Nuestra misión es facilitar el abastecimiento diario de nuestros clientes en un entorno de confianza y cercanía, operando con integridad para fomentar el desarrollo económico local y la satisfacción de nuestra comunidad.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h4>🔭 Visión</h4>
+                        <p>Ser el minimarket referente de la zona por nuestra eficiencia operativa y vanguardia tecnológica, destacándonos por contar siempre con el stock necesario para nuestros clientes gracias a una gestión inteligente. Aspiramos a convertirnos en un modelo de negocio digitalizado que combine la calidez del comercio tradicional con la precisión de la inteligencia artificial para asegurar un crecimiento sostenible.</p>
+                    </div>
+                </div>
+
+                <!-- Info Desarrollador -->
+                <div class="about-card about-developer">
+                    <div class="about-card-header">
+                        <div class="about-icon developer-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Desarrollador</h3>
+                        <span class="about-role">Ingeniería de Sistemas</span>
+                    </div>
+
+                    <div class="developer-profile">
+                        <div class="developer-avatar">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <circle cx="40" cy="40" r="40" fill="#2563eb"/>
+                                <circle cx="40" cy="30" r="12" fill="white"/>
+                                <path d="M20 65c0-11 9-20 20-20s20 9 20 20" fill="white"/>
+                            </svg>
+                        </div>
+                        <h4 class="developer-name">Tu Nombre Aquí</h4>
+                        <p class="developer-title">Desarrollador Full Stack</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h4>👨‍💻 Sobre el Desarrollador</h4>
+                        <p>Estudiante de Ingeniería de Sistemas apasionado por el desarrollo de software y la transformación digital de pequeños negocios. Este proyecto representa la aplicación de conocimientos en diseño de sistemas, bases de datos y desarrollo web para resolver problemas reales del comercio local.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h4>🛠️ Tecnologías Utilizadas</h4>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">GitHub Pages</span>
+                            <span class="tech-badge">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h4>📬 Contacto</h4>
+                        <div class="contact-links">
+                            <a href="#" class="contact-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="#" class="contact-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                Email
+                            </a>
+                            <a href="#" class="contact-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                El Alto, Bolivia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#2563eb"/>
+                            <path d="M8 12h16M8 16h12M8 20h14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Tienda Elena</span>
+                    </div>
+                    <p>Sistema de gestión inteligente para minimarkets. Modernizando el comercio local con tecnología.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#modulos">Módulos</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Módulos</h4>
+                    <ul>
+                        <li><a href="pages/dashboard.html">Dashboard</a></li>
+                        <li><a href="pages/productos.html">Productos</a></li>
+                        <li><a href="pages/ventas.html">Ventas</a></li>
+                        <li><a href="pages/reportes.html">Reportes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 El Alto, Bolivia</li>
+                        <li>📧 contacto@elena.bo</li>
+                        <li>📱 +591 XXX XXXX</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Minimarket Elena - Sistema de Gestión. Todos los derechos reservados.</p>
+                <p>Desarrollado con ❤️ para la modernización del comercio local.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
