@@ -5,23 +5,41 @@ Sistema integral de gestión para minimarkets desarrollado con HTML, CSS y JavaS
 ##  Estructura del Proyecto
 
 minimarket-elena/
+
 ├── index.html # Landing page principal
+
 ├── css/
+
 │ └── style.css # Estilos globales
+
 ├── js/
+
 │ └── script.js # Scripts de interactividad
+
 ├── pages/
+
 │ ├── dashboard.html # Panel de control
+
 │ ├── productos.html # Gestión de productos
+
 │ ├── inventario.html # Control de inventario
+
 │ ├── ventas.html # Punto de venta
+
 │ ├── reportes.html # Reportes y analíticas
+
 │ ├── usuarios.html # Gestión de usuarios
+
 │ └── contabilidad.html # Módulo contable
+
 ├── assets/
+
 │ └── images/
+
 │ └── logo.svg # Logo del sistema
+
 └── README.md
+
 
 
 ## 🚀 Despliegue en GitHub Pages
@@ -57,5 +75,5 @@ minimarket-elena/
 
 ## 👨‍💻 Desarrollado por
 
-**[Tu Nombre]** - Ingeniería de Sistemas  
+**Francisco J. Pari Calle** - Ingeniería de Sistemas  
 El Alto, Bolivia
