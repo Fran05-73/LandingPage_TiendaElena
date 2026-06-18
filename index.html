@@ -867,6 +867,336 @@
     </div>
   </section>
 
+  <!-- Documentación Section -->
+<section class="section" id="documentacion">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Documentación Formal</span>
+            <h2 class="section-title">Informe Consolidado del Proyecto</h2>
+            <p class="section-subtitle">Sistema de Información Web de Gestión de Inventarios con Predicción de Demanda basado en Machine Learning</p>
+            <p class="section-subtitle" style="font-weight: 600; color: var(--primary);">Caso: Minimarket Doña Elena</p>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="docs-tabs-container">
+            <div class="docs-tabs-nav">
+                <button class="docs-tab-btn active" data-tab="intro">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    Introducción
+                </button>
+                <button class="docs-tab-btn" data-tab="objetivos">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    Objetivos
+                </button>
+                <button class="docs-tab-btn" data-tab="justificacion">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    Justificación
+                </button>
+                <button class="docs-tab-btn" data-tab="marco">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    </svg>
+                    Marco Teórico
+                </button>
+                <button class="docs-tab-btn" data-tab="requisitos">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                    </svg>
+                    Requisitos
+                </button>
+                <button class="docs-tab-btn" data-tab="metodologia">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                    Metodología
+                </button>
+            </div>
+
+            <!-- Tabs Content -->
+            <div class="docs-tabs-content">
+                <!-- Tab: Introducción -->
+                <div class="docs-tab-panel active" id="intro">
+                    <div class="docs-card">
+                        <h3>📋 Planteamiento del Problema</h3>
+                        <p>El Minimarket "Doña Elena" enfrenta dificultades operativas críticas debido a la dependencia de registros físicos. Esta gestión manual genera tres conflictos principales:</p>
+                        
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <span class="problem-icon">📄</span>
+                                <div>
+                                    <h4>Pérdida de Información</h4>
+                                    <p>La dificultad para consolidar un inventario real impide conocer la rentabilidad exacta.</p>
+                                </div>
+                            </div>
+                            <div class="problem-item">
+                                <span class="problem-icon">📦</span>
+                                <div>
+                                    <h4>Quiebre de Stock</h4>
+                                    <p>La falta de alertas inteligentes provoca que productos estrella se agoten en días de alta feria (jueves y domingo), perdiendo ventas frente a la competencia.</p>
+                                </div>
+                            </div>
+                            <div class="problem-item">
+                                <span class="problem-icon">💰</span>
+                                <div>
+                                    <h4>Capital Dormido</h4>
+                                    <p>La acumulación de productos de baja rotación estanca el capital de trabajo mientras otros productos caducan sin ser detectados a tiempo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-box">
+                            <strong>Formulación del Problema:</strong><br>
+                            ¿De qué manera se realiza la implementación de algoritmos de Machine Learning para la predicción de demanda de productos y la optimización de inventarios en el Minimarket "Doña Elena" de la ciudad de El Alto, para mejorar su eficiencia operativa y competitividad frente a la informalidad?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Objetivos -->
+                <div class="docs-tab-panel" id="objetivos">
+                    <div class="docs-card">
+                        <h3>🎯 Objetivo General</h3>
+                        <div class="objective-main">
+                            <p>Desarrollar un sistema web de administración integrado con modelos de Inteligencia Artificial para la gestión inteligente de inventarios y ventas en el Minimarket Doña Elena.</p>
+                        </div>
+
+                        <h3>📌 Objetivos Específicos</h3>
+                        <div class="objectives-grid">
+                            <div class="objective-item">
+                                <span class="obj-number">01</span>
+                                <p>Digitalizar y centralizar los registros de ventas, compras y proveedores en una base de datos segura y estructurada.</p>
+                            </div>
+                            <div class="objective-item">
+                                <span class="obj-number">02</span>
+                                <p>Desarrollar una interfaz web intuitiva adaptada al flujo de trabajo del comerciante minorista en El Alto.</p>
+                            </div>
+                            <div class="objective-item">
+                                <span class="obj-number">03</span>
+                                <p>Entrenar e implementar modelos de Machine Learning (series de tiempo y regresión) para la predicción de la demanda futura basada en el historial de ventas.</p>
+                            </div>
+                            <div class="objective-item">
+                                <span class="obj-number">04</span>
+                                <p>Generar alertas inteligentes de reabastecimiento y reportes analíticos para optimizar el uso del capital y reducir mermas.</p>
+                            </div>
+                            <div class="objective-item">
+                                <span class="obj-number">05</span>
+                                <p>Evaluar el rendimiento del sistema mediante métricas de precisión del modelo para garantizar su utilidad en el entorno real del negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Justificación -->
+                <div class="docs-tab-panel" id="justificacion">
+                    <div class="justification-grid">
+                        <div class="justification-card">
+                            <div class="just-icon">⚙️</div>
+                            <h4>Técnica</h4>
+                            <p>La implementación de algoritmos de Inteligencia Artificial centrados en el análisis de series de tiempo y modelos de regresión permite la detección automática de patrones de consumo y tendencias de venta que resultan invisibles bajo los métodos de registro manual.</p>
+                            <p>La arquitectura tecnológica integra un motor de Machine Learning desarrollado en Python con una interfaz web moderna, utilizando PostgreSQL como gestor de base de datos.</p>
+                        </div>
+
+                        <div class="justification-card">
+                            <div class="just-icon">👥</div>
+                            <h4>Social</h4>
+                            <p>El sistema automatiza las tareas repetitivas de registro y control, permitiendo a los administradores tomar decisiones informadas con base en datos reales.</p>
+                            <p>De manera indirecta, la comunidad circundante se beneficia al contar con un comercio más eficiente que asegura la disponibilidad de productos de primera necesidad.</p>
+                        </div>
+
+                        <div class="justification-card">
+                            <div class="just-icon">💵</div>
+                            <h4>Económica</h4>
+                            <p>La automatización de pedidos y la predicción de demanda permiten reducir drásticamente las mermas económicas por productos vencidos y evitar el sobrestock de artículos de baja rotación.</p>
+                            <p>La inversión tecnológica se optimiza al utilizar software libre y de código abierto, eliminando gastos por licencias.</p>
+                        </div>
+
+                        <div class="justification-card">
+                            <div class="just-icon">🎓</div>
+                            <h4>Académica</h4>
+                            <p>El proyecto constituye un caso de estudio aplicado sobre la integración de Machine Learning en sistemas de gestión comercial para el contexto boliviano.</p>
+                            <p>Aporta evidencia empírica sobre la viabilidad técnica y económica de estas soluciones en entornos con limitaciones de infraestructura.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Marco Teórico -->
+                <div class="docs-tab-panel" id="marco">
+                    <div class="docs-card">
+                        <h3>📚 Definiciones Enfocadas al Sistema</h3>
+                        
+                        <div class="theory-item">
+                            <h4>Arquitectura Cliente-Servidor</h4>
+                            <p>Modelo de diseño de software en el que las tareas y responsabilidades del sistema se distribuyen entre proveedores de recursos o servicios (servidores) y los solicitantes de dichos recursos (clientes). El servidor aloja la lógica de negocio desarrollada en PHP y el motor de Machine Learning en Python.</p>
+                        </div>
+
+                        <div class="theory-item">
+                            <h4>Protocolo HTTP</h4>
+                            <p>Hypertext Transfer Protocol permite la transferencia de información en la World Wide Web. El sistema utiliza HTTP para la comunicación entre el navegador del cliente y el servidor web Apache, facilitando el intercambio de datos en formato JSON y HTML.</p>
+                        </div>
+
+                        <div class="theory-item">
+                            <h4>JSON (JavaScript Object Notation)</h4>
+                            <p>Formato ligero de intercambio de datos, fácil de leer y escribir para humanos y fácil de interpretar y generar para máquinas. Se utiliza para la comunicación entre la interfaz web y el motor de Machine Learning a través de una API REST.</p>
+                        </div>
+
+                        <div class="theory-item">
+                            <h4>Machine Learning para Predicción de Demanda</h4>
+                            <p>Rama de la Inteligencia Artificial que desarrolla algoritmos capaces de aprender patrones a partir de datos históricos y generar predicciones. Para el sistema se emplean modelos de series de tiempo (ARIMA y Prophet) y regresión, que permiten pronosticar la demanda futura basada en el historial de ventas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Requisitos -->
+                <div class="docs-tab-panel" id="requisitos">
+                    <div class="docs-card">
+                        <h3>✅ Requisitos Funcionales</h3>
+                        <div class="requirements-list">
+                            <div class="req-item">
+                                <span class="req-badge">RF-01</span>
+                                <p>Gestionar el catálogo de productos (CRUD: creación, lectura, actualización, baja lógica).</p>
+                                <span class="req-module">Módulo: Inventario</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-02</span>
+                                <p>Procesar ventas mediante una interfaz POS, descontando stock automáticamente.</p>
+                                <span class="req-module">Módulo: Ventas</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-03</span>
+                                <p>Calcular y mostrar la predicción de demanda mediante el motor de IA.</p>
+                                <span class="req-module">Módulo: Inteligencia Artificial</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-04</span>
+                                <p>Alertar sobre productos con stock bajo o próximos a vencer.</p>
+                                <span class="req-module">Módulo: Inventario</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-05</span>
+                                <p>Permitir el registro de movimientos financieros (Ingresos/Egresos).</p>
+                                <span class="req-module">Módulo: Contabilidad</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-06</span>
+                                <p>Generar reportes de ventas y stock en formato PDF/Excel.</p>
+                                <span class="req-module">Módulo: Reportes</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge">RF-07</span>
+                                <p>Implementar control de acceso basado en roles (Administrador/Cajero).</p>
+                                <span class="req-module">Módulo: Seguridad</span>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 32px;">🔧 Requisitos No Funcionales</h3>
+                        <div class="requirements-list">
+                            <div class="req-item">
+                                <span class="req-badge rnf">RNF-01</span>
+                                <p>El sistema debe responder en menos de 2 segundos en consultas de inventario.</p>
+                                <span class="req-module">Categoría: Rendimiento</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge rnf">RNF-02</span>
+                                <p>El sistema debe ser operable localmente sobre Linux Mint XFCE con recursos limitados.</p>
+                                <span class="req-module">Categoría: Portabilidad</span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-badge rnf">RNF-03</span>
+                                <p>La base de datos debe garantizar la integridad de las transacciones mediante lógica ACID.</p>
+                                <span class="req-module">Categoría: Seguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Metodología -->
+                <div class="docs-tab-panel" id="metodologia">
+                    <div class="docs-card">
+                        <h3>🔧 Principios de Diseño SOLID</h3>
+                        <div class="solid-grid">
+                            <div class="solid-item">
+                                <span class="solid-letter">S</span>
+                                <h4>Single Responsibility</h4>
+                                <p>Cada clase tiene una única responsabilidad.</p>
+                            </div>
+                            <div class="solid-item">
+                                <span class="solid-letter">O</span>
+                                <h4>Open/Closed</h4>
+                                <p>Las clases están abiertas a la extensión pero cerradas a la modificación.</p>
+                            </div>
+                            <div class="solid-item">
+                                <span class="solid-letter">L</span>
+                                <h4>Liskov Substitution</h4>
+                                <p>Las subclases pueden sustituir a sus clases base.</p>
+                            </div>
+                            <div class="solid-item">
+                                <span class="solid-letter">I</span>
+                                <h4>Interface Segregation</h4>
+                                <p>Se prefieren interfaces específicas en lugar de una general.</p>
+                            </div>
+                            <div class="solid-item">
+                                <span class="solid-letter">D</span>
+                                <h4>Dependency Inversion</h4>
+                                <p>Se depende de abstracciones, no de implementaciones concretas.</p>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 32px;">📊 Arquitectura en Capas</h3>
+                        <div class="architecture-layers">
+                            <div class="layer">
+                                <div class="layer-icon">🖥️</div>
+                                <div class="layer-content">
+                                    <h4>Capa de Presentación (Frontend)</h4>
+                                    <p>HTML5, CSS3, JavaScript (navegador)</p>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <div class="layer-icon">⚙️</div>
+                                <div class="layer-content">
+                                    <h4>Capa de Negocio (Backend)</h4>
+                                    <p>PHP (MVC) – autenticación, inventario, ventas, integración IA</p>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <div class="layer-icon">🗄️</div>
+                                <div class="layer-content">
+                                    <h4>Capa de Datos</h4>
+                                    <p>PostgreSQL (persistencia ACID)</p>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <div class="layer-icon">🤖</div>
+                                <div class="layer-content">
+                                    <h4>Capa de Inteligencia Artificial</h4>
+                                    <p>Python (Pandas, Scikit-Learn, Prophet) – modelo predictivo expuesto vía API REST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
