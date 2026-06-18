@@ -7,7 +7,6 @@ Sistema integral de gestión para minimarkets desarrollado con HTML, CSS y JavaS
 minimarket-elena/
 
 ├── index.html # Landing page principal
-
 ├── css/
 
 │ └── style.css # Estilos globales
